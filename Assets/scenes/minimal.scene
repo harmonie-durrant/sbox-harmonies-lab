@@ -77,7 +77,7 @@
       "__version": 1,
       "Flags": 0,
       "Name": "portable_generator",
-      "Position": "371.2287,491.1891,12",
+      "Position": "176,592,12.00001",
       "Rotation": "0,0,0,1",
       "Scale": "1,1,1",
       "Tags": "solid,highlightable,interactable",
@@ -637,7 +637,7 @@
       "__version": 1,
       "Flags": 0,
       "Name": "Tall Lamp",
-      "Position": "447.6208,487.5333,0",
+      "Position": "272,592,0.00002533197",
       "Rotation": "0,0,0,1",
       "Scale": "0.5,0.5,0.5",
       "Tags": "",
@@ -1374,6 +1374,234 @@
                 {
                   "__type": "Harmonie.UI.GameObjectLookAtPlayer",
                   "__guid": "8cbb3f6b-8097-4a05-bde9-3e370bf2c0f5",
+                  "__enabled": true,
+                  "Invert": false,
+                  "MaxRotationX": 45,
+                  "MinRotationX": -45,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null
+                }
+              ],
+              "Children": []
+            }
+          ]
+        },
+        {
+          "__guid": "58f50d7f-6a60-4d9e-9c32-b8ee65b40d9e",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Entry Cone (n2)",
+          "Position": "-64,448,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [],
+          "Children": [
+            {
+              "__guid": "5c246bee-a702-4406-ab84-ac14ab9ddbfc",
+              "__version": 1,
+              "Flags": 0,
+              "Name": "Traffic Cone",
+              "Position": "0,0,0",
+              "Rotation": "0,0,0,1",
+              "Scale": "1,1,1",
+              "Tags": "",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "NetworkInterpolation": true,
+              "NetworkOrphaned": 0,
+              "OwnerTransfer": 1,
+              "Components": [
+                {
+                  "__type": "Sandbox.Prop",
+                  "__guid": "51772b39-35f1-438b-baa2-3d62c93fdfcd",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "Health": 75,
+                  "IsStatic": false,
+                  "MaterialGroup": null,
+                  "Model": "models/sbox_props/traffic_cone/traffic_cone.vmdl",
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "OnPropBreak": null,
+                  "OnPropTakeDamage": null,
+                  "StartAsleep": false,
+                  "Tint": "1,1,1,1"
+                }
+              ],
+              "Children": []
+            },
+            {
+              "__guid": "ed0af85b-3231-4d7a-808f-fb0adfb62224",
+              "__version": 1,
+              "Flags": 0,
+              "Name": "Title",
+              "Position": "0,0,53.921",
+              "Rotation": "0,0,0,1",
+              "Scale": "1,1,1",
+              "Tags": "",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "NetworkInterpolation": true,
+              "NetworkOrphaned": 0,
+              "OwnerTransfer": 1,
+              "Components": [
+                {
+                  "__type": "Sandbox.TextRenderer",
+                  "__guid": "c27077fc-e264-4c8f-9a75-b2b9c5979288",
+                  "__enabled": true,
+                  "__version": 1,
+                  "BlendMode": "Normal",
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
+                  "Scale": 0.3,
+                  "TextAlignment": "Center",
+                  "TextScope": {
+                    "Text": "v0.2 ⬆️",
+                    "TextColor": "0.18263,0.93488,0.18263,1",
+                    "FontName": "Poppins",
+                    "FontSize": 48,
+                    "FontWeight": 800,
+                    "FontItalic": false,
+                    "LineHeight": 1,
+                    "LetterSpacing": 0,
+                    "WordSpacing": 0,
+                    "Outline": {
+                      "Enabled": false,
+                      "Size": 4,
+                      "Color": "0,0,1,1"
+                    },
+                    "Shadow": {
+                      "Enabled": false,
+                      "Size": 4,
+                      "Color": "0,0,0,1",
+                      "Offset": "4,4"
+                    },
+                    "OutlineUnder": {
+                      "Enabled": false,
+                      "Size": 4,
+                      "Color": "0,1,0,1"
+                    },
+                    "ShadowUnder": {
+                      "Enabled": false,
+                      "Size": 4,
+                      "Color": "0,0,0,1",
+                      "Offset": "4,4"
+                    }
+                  }
+                },
+                {
+                  "__type": "Harmonie.UI.GameObjectLookAtPlayer",
+                  "__guid": "a606d034-37a2-4c35-ad50-26f2de40c032",
+                  "__enabled": true,
+                  "Invert": false,
+                  "MaxRotationX": 45,
+                  "MinRotationX": -45,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null
+                }
+              ],
+              "Children": []
+            },
+            {
+              "__guid": "64f8a1bc-d55b-4083-9b1e-5410365732ad",
+              "__version": 1,
+              "Flags": 0,
+              "Name": "Status",
+              "Position": "0,0,37.921",
+              "Rotation": "0,0,0,1",
+              "Scale": "1,1,1",
+              "Tags": "",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "NetworkInterpolation": true,
+              "NetworkOrphaned": 0,
+              "OwnerTransfer": 1,
+              "Components": [
+                {
+                  "__type": "Sandbox.TextRenderer",
+                  "__guid": "c2ad0e0c-2c4b-4ff1-9583-9b8eb8cb346b",
+                  "__enabled": true,
+                  "__version": 1,
+                  "BlendMode": "Normal",
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
+                  "Scale": 0.3,
+                  "TextAlignment": "Center",
+                  "TextScope": {
+                    "Text": "Soon",
+                    "TextColor": "0.93488,0.18263,0.18263,1",
+                    "FontName": "Poppins",
+                    "FontSize": 32,
+                    "FontWeight": 800,
+                    "FontItalic": false,
+                    "LineHeight": 1,
+                    "LetterSpacing": 0,
+                    "WordSpacing": 0,
+                    "Outline": {
+                      "Enabled": false,
+                      "Size": 4,
+                      "Color": "0,0,1,1"
+                    },
+                    "Shadow": {
+                      "Enabled": false,
+                      "Size": 4,
+                      "Color": "0,0,0,1",
+                      "Offset": "4,4"
+                    },
+                    "OutlineUnder": {
+                      "Enabled": false,
+                      "Size": 4,
+                      "Color": "0,1,0,1"
+                    },
+                    "ShadowUnder": {
+                      "Enabled": false,
+                      "Size": 4,
+                      "Color": "0,0,0,1",
+                      "Offset": "4,4"
+                    }
+                  }
+                },
+                {
+                  "__type": "Harmonie.UI.GameObjectLookAtPlayer",
+                  "__guid": "5ce9829a-0547-42e7-954e-21b3bfb2b35d",
                   "__enabled": true,
                   "Invert": false,
                   "MaxRotationX": 45,
@@ -3937,44 +4165,6 @@
           "Children": []
         },
         {
-          "__guid": "0cd3d466-4d30-412f-9f1d-fd3b9e064b5c",
-          "__version": 1,
-          "Flags": 0,
-          "Name": "traffic_cone (25)",
-          "Position": "-64,448,0",
-          "Rotation": "0,0,0,1",
-          "Scale": "1,1,1",
-          "Tags": "",
-          "Enabled": true,
-          "NetworkMode": 2,
-          "NetworkInterpolation": true,
-          "NetworkOrphaned": 0,
-          "OwnerTransfer": 1,
-          "Components": [
-            {
-              "__type": "Sandbox.Prop",
-              "__guid": "c2bd3652-6fca-4afa-b0e2-61b17d929527",
-              "__enabled": true,
-              "BodyGroups": 18446744073709551615,
-              "Health": 75,
-              "IsStatic": false,
-              "MaterialGroup": null,
-              "Model": "models/sbox_props/traffic_cone/traffic_cone.vmdl",
-              "OnComponentDestroy": null,
-              "OnComponentDisabled": null,
-              "OnComponentEnabled": null,
-              "OnComponentFixedUpdate": null,
-              "OnComponentStart": null,
-              "OnComponentUpdate": null,
-              "OnPropBreak": null,
-              "OnPropTakeDamage": null,
-              "StartAsleep": false,
-              "Tint": "1,1,1,1"
-            }
-          ],
-          "Children": []
-        },
-        {
           "__guid": "dc80719b-2d7f-4e7c-8d79-4dfdb7d112b0",
           "__version": 1,
           "Flags": 0,
@@ -4511,7 +4701,7 @@
           "__version": 1,
           "Flags": 0,
           "Name": "traffic_cone (17)",
-          "Position": "-64,-576,0",
+          "Position": "-64,-512,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
@@ -4549,7 +4739,7 @@
           "__version": 1,
           "Flags": 0,
           "Name": "traffic_cone (16)",
-          "Position": "64,-576,0",
+          "Position": "64,-512,0",
           "Rotation": "0,0,0,1",
           "Scale": "1,1,1",
           "Tags": "",
