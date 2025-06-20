@@ -1,0 +1,1190 @@
+{
+  "__guid": "325a4042-0696-43dd-a79d-dcc314299ba3",
+  "GameObjects": [
+    {
+      "__guid": "bb09cad1-c893-44e0-a976-dea04e225618",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "Scene Information",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "dfebee9c-b786-4c1e-950e-49578681edfd",
+          "__enabled": true,
+          "Author": null,
+          "Changes": null,
+          "Description": "",
+          "Group": null,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "SceneTags": "",
+          "Title": "minimal",
+          "Version": null
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "a01a3423-c9a3-42ff-a45b-4e7e3a0a1224",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "Network Helper",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.NetworkHelper",
+          "__guid": "3c530e4a-59db-43d3-a3f6-487ea4603995",
+          "__enabled": true,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "PlayerPrefab": {
+            "_type": "gameobject",
+            "prefab": "prefabs/player.prefab"
+          },
+          "SpawnPoints": [],
+          "StartServer": true
+        }
+      ],
+      "Children": []
+    },
+    {
+      "__guid": "6ed19959-2179-48cd-ae95-00c5d44a8379",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "portable_generator",
+      "Position": "371.2287,491.1891,12",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "solid,highlightable,interactable",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.Prop",
+          "__guid": "dd1dfa98-5b9c-41c5-b8e0-6e6b1e1177c1",
+          "__enabled": true,
+          "BodyGroups": 18446744073709551615,
+          "Health": 0,
+          "IsStatic": false,
+          "MaterialGroup": null,
+          "Model": "models/portable_generator.vmdl",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnPropBreak": null,
+          "OnPropTakeDamage": null,
+          "StartAsleep": false,
+          "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "Sandbox.SoundPointComponent",
+          "__guid": "c97415aa-ddab-48d0-b4b9-41126447b069",
+          "__enabled": true,
+          "Distance": 512,
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
+          "Falloff": [
+            {
+              "x": 0,
+              "y": 1,
+              "in": 3.1415927,
+              "out": -3.1415927,
+              "mode": "Mirrored"
+            },
+            {
+              "x": 1,
+              "y": 0,
+              "in": 0,
+              "out": 0,
+              "mode": "Mirrored"
+            }
+          ],
+          "Force2d": false,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": false,
+          "SoundEvent": null,
+          "SoundOverride": false,
+          "StopOnNew": false,
+          "TargetMixer": {
+            "Name": "unknown",
+            "Id": "00000000-0000-0000-0000-000000000000"
+          },
+          "Volume": 1
+        },
+        {
+          "__type": "Harmonie.PowerSpace.Generator",
+          "__guid": "d0a7eeb7-b071-42da-bb4d-dfd346fabdbe",
+          "__enabled": true,
+          "ActiveSound": "sounds/electric_loop.sound",
+          "ActiveSoundPoint": {
+            "_type": "component",
+            "component_id": "3c26300f-a120-4a03-bcfa-b3809adf5897",
+            "go": "f3bdabe3-059e-4150-806b-889c434d858c",
+            "component_type": "SoundPointComponent"
+          },
+          "IsActive": false,
+          "IsPowered": false,
+          "IsRunning": false,
+          "Name": "Generator",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "PowerConsumption": -100
+        },
+        {
+          "__type": "Sandbox.HighlightOutline",
+          "__guid": "4bf502b5-e150-4641-b6c0-69ddd4fef612",
+          "__enabled": true,
+          "Color": "1,1,1,1",
+          "InsideColor": "0,0,0,0",
+          "InsideObscuredColor": "0,0,0,0",
+          "Material": null,
+          "ObscuredColor": "0,0,0,0.4",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Width": 0
+        },
+        {
+          "__type": "Harmonie.PowerSpace.Battery",
+          "__guid": "a72f6678-eab1-451d-a78f-975a665ec8e1",
+          "__enabled": true,
+          "ChargeStatus": 0,
+          "Connections": [
+            {
+              "_type": "component",
+              "component_id": "3b3f2b9e-af43-43f5-aee5-2ae345670bd6",
+              "go": "6ed19959-2179-48cd-ae95-00c5d44a8379",
+              "component_type": "Plug"
+            }
+          ],
+          "CurrentCharge": 50,
+          "InternalResistance": 0.05,
+          "MaxCharge": 100,
+          "MaxChargeRate": 5,
+          "MaxDischargeRate": 10,
+          "MaxVoltage": 14.4,
+          "MinVoltage": 10,
+          "Name": "Battery",
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "Temperature": 25,
+          "Voltage": 12
+        },
+        {
+          "__type": "Harmonie.PowerSpace.Plug",
+          "__guid": "3b3f2b9e-af43-43f5-aee5-2ae345670bd6",
+          "__enabled": true,
+          "ConnectedBattery": null,
+          "ConnectedDevice": {
+            "_type": "component",
+            "component_id": "d0a7eeb7-b071-42da-bb4d-dfd346fabdbe",
+            "go": "6ed19959-2179-48cd-ae95-00c5d44a8379",
+            "component_type": "Generator"
+          },
+          "IsInput": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "3c3488e3-f0ae-440f-98c0-f7b7364224cf",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Device Display",
+          "Position": "-17,0,25",
+          "Rotation": "0,0,1,-0.00000004371139",
+          "Scale": "0.5632889,0.5632889,0.5632889",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "a800a59d-1a65-48a9-8786-792816582f2e",
+              "__enabled": true,
+              "HorizontalAlign": "Center",
+              "InteractionRange": 0,
+              "LookAtCamera": false,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PanelSize": "1500,700",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderScale": 1,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "Harmonie.UI.DeviceInfoUI",
+              "__guid": "c8110d9b-7bae-4718-9d12-8636a158ffd9",
+              "__enabled": true,
+              "connected_device": {
+                "_type": "component",
+                "component_id": "d0a7eeb7-b071-42da-bb4d-dfd346fabdbe",
+                "go": "6ed19959-2179-48cd-ae95-00c5d44a8379",
+                "component_type": "Generator"
+              },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            },
+            {
+              "__type": "Harmonie.UI.WorldPanelLookAtPlayer",
+              "__guid": "d64334da-85f0-40cc-8b60-6979b7e296f9",
+              "__enabled": true,
+              "_maxRotationX": 45,
+              "_minRotationX": -45,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PanelObject": {
+                "_type": "gameobject",
+                "go": "3c3488e3-f0ae-440f-98c0-f7b7364224cf"
+              }
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "592353c7-73e1-4c34-a916-87ee29bb58c7",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Battery Display",
+          "Position": "17,0,25",
+          "Rotation": "0,0,1,-0.00000004371139",
+          "Scale": "0.5632889,0.5632889,0.5632889",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "29e02ff5-a9bb-435f-8b92-cc02a1f77838",
+              "__enabled": true,
+              "HorizontalAlign": "Center",
+              "InteractionRange": 0,
+              "LookAtCamera": false,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PanelSize": "1500,700",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderScale": 1,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "Harmonie.UI.WorldPanelLookAtPlayer",
+              "__guid": "65c41307-8158-4101-907d-92555ec57dc2",
+              "__enabled": true,
+              "_maxRotationX": 45,
+              "_minRotationX": -45,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PanelObject": {
+                "_type": "gameobject",
+                "go": "592353c7-73e1-4c34-a916-87ee29bb58c7"
+              }
+            },
+            {
+              "__type": "Harmonie.UI.BatteryInfoUI",
+              "__guid": "d597625f-d7ad-43c9-bf03-e45b8d754f38",
+              "__enabled": true,
+              "connected_battery": {
+                "_type": "component",
+                "component_id": "a72f6678-eab1-451d-a78f-975a665ec8e1",
+                "go": "6ed19959-2179-48cd-ae95-00c5d44a8379",
+                "component_type": "Battery"
+              },
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "f3bdabe3-059e-4150-806b-889c434d858c",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Sound Point",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.SoundPointComponent",
+              "__guid": "3c26300f-a120-4a03-bcfa-b3809adf5897",
+              "__enabled": true,
+              "Distance": 1000,
+              "DistanceAttenuation": true,
+              "DistanceAttenuationOverride": true,
+              "Falloff": [
+                {
+                  "x": 0,
+                  "y": 1,
+                  "in": 3.1415927,
+                  "out": -3.1415927,
+                  "mode": "Mirrored"
+                },
+                {
+                  "x": 1,
+                  "y": 0,
+                  "in": 0,
+                  "out": 0,
+                  "mode": "Mirrored"
+                }
+              ],
+              "Force2d": false,
+              "MaxRepeatTime": 1,
+              "MinRepeatTime": 1,
+              "Occlusion": false,
+              "OcclusionOverride": false,
+              "OcclusionRadius": 32,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Pitch": 1,
+              "PlayOnStart": true,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": false,
+              "SoundEvent": "sounds/impacts/melee/impact-melee-flesh.sound",
+              "SoundOverride": false,
+              "StopOnNew": false,
+              "TargetMixer": {
+                "Name": "game",
+                "Id": "47255466-0c77-4764-8aa6-b89411bdfe15"
+              },
+              "Volume": 1
+            }
+          ],
+          "Children": []
+        },
+        {
+          "__guid": "e45dd6df-9f6c-4cc0-9bc9-1add49779b3d",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "FemalePlug",
+          "Position": "13.65295,-13.63434,-1.171538",
+          "Rotation": "0,0,1,-0.00000004371139",
+          "Scale": "0.8,0.8,0.8",
+          "Tags": "femaleplug",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "7d3c3871-4b3f-4cb1-a871-010611227dd9",
+              "__enabled": true,
+              "BodyGroups": 1,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/power_socket.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "1bbf1c15-f097-4cbe-8edd-9c58b3046289",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "7,4,7",
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "Sandbox.HighlightOutline",
+              "__guid": "dfed306c-fc6d-41cb-9347-ada79f95d2bf",
+              "__enabled": true,
+              "Color": "1,1,1,1",
+              "InsideColor": "0,0,0,0",
+              "InsideObscuredColor": "0,0,0,0",
+              "Material": null,
+              "ObscuredColor": "0,0,0,0.4",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Width": 0
+            },
+            {
+              "__type": "Harmonie.PowerSpace.FemalePlugDetector",
+              "__guid": "16002e88-7eff-415d-b765-3e88afd1028d",
+              "__enabled": true,
+              "ConnectedBattery": {
+                "_type": "component",
+                "component_id": "a72f6678-eab1-451d-a78f-975a665ec8e1",
+                "go": "6ed19959-2179-48cd-ae95-00c5d44a8379",
+                "component_type": "Battery"
+              },
+              "ConnectedDevice": null,
+              "DetectionBox": {
+                "_type": "component",
+                "component_id": "1bbf1c15-f097-4cbe-8edd-9c58b3046289",
+                "go": "e45dd6df-9f6c-4cc0-9bc9-1add49779b3d",
+                "component_type": "BoxCollider"
+              },
+              "IsInput": false,
+              "IsPluggedIn": false,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PlugSound": "sound/click1.sound",
+              "TargetSnapObject": {
+                "_type": "gameobject",
+                "go": "8558d7b3-bc35-486c-b664-0b148048d09e"
+              }
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "8558d7b3-bc35-486c-b664-0b148048d09e",
+              "__version": 1,
+              "Flags": 0,
+              "Name": "PlugSnapTarget",
+              "Position": "0,-10,0",
+              "Rotation": "0,0,0,1",
+              "Scale": "1,1,1",
+              "Tags": "",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "NetworkInterpolation": true,
+              "NetworkOrphaned": 0,
+              "OwnerTransfer": 1,
+              "Components": [],
+              "Children": []
+            },
+            {
+              "__guid": "36cea848-482b-437f-b2e4-3c2e95dcfe17",
+              "__version": 1,
+              "Flags": 0,
+              "Name": "Plug Outline",
+              "Position": "-0.00000002358185,-0.2697449,0",
+              "Rotation": "0,0,0,1",
+              "Scale": "0.146,0.02,0.146",
+              "Tags": "",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "NetworkInterpolation": true,
+              "NetworkOrphaned": 0,
+              "OwnerTransfer": 1,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "a7766721-2add-46fd-b01d-67aebda7a183",
+                  "__enabled": true,
+                  "BodyGroups": 18446744073709551615,
+                  "CreateAttachments": false,
+                  "MaterialGroup": null,
+                  "MaterialOverride": null,
+                  "Model": "models/dev/box.vmdl",
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
+                  "RenderType": "On",
+                  "Tint": "1,1,1,1"
+                }
+              ],
+              "Children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "b86c0751-2972-4c09-86b4-a012e858a65a",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "Tall Lamp",
+      "Position": "447.6208,487.5333,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "0.5,0.5,0.5",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [],
+      "Children": [
+        {
+          "__guid": "5b1f21dc-4359-4fe5-a9fe-8df0e1b9461c",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Object",
+          "Position": "0,0,0",
+          "Rotation": "0,0,0,1",
+          "Scale": "1,1,1",
+          "Tags": "highlightable,solid,interactable",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "3dbe7d3d-4fcd-4d5b-a55a-e02adb94157c",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/items/fancywooden_set/fancywood_lamp.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.ModelCollider",
+              "__guid": "85a61c0f-9377-424d-a566-12f38b1c3aa0",
+              "__enabled": true,
+              "Friction": null,
+              "IsTrigger": false,
+              "Model": "models/items/fancywooden_set/fancywood_lamp.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "f5ced599-59a9-45b5-b03b-a134a5f3f2e8",
+              "__enabled": true,
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {
+                "X": false,
+                "Y": false,
+                "Z": false,
+                "Pitch": false,
+                "Yaw": false,
+                "Roll": false
+              },
+              "MassCenterOverride": "0,0,0",
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OverrideMassCenter": false,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            },
+            {
+              "__type": "Sandbox.HighlightOutline",
+              "__guid": "5ab91f0f-e7a8-4a8d-aed4-f49447a6524f",
+              "__enabled": true,
+              "Color": "1,1,1,1",
+              "InsideColor": "0,0,0,0",
+              "InsideObscuredColor": "0,0,0,0",
+              "Material": null,
+              "ObscuredColor": "0,0,0,0.4",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Width": 0
+            },
+            {
+              "__type": "Harmonie.PowerSpace.CustomLamp",
+              "__guid": "26c0633b-ec1b-487e-898b-78692b149857",
+              "__enabled": true,
+              "ActiveSound": null,
+              "ActiveSoundPoint": null,
+              "IsActive": false,
+              "IsPowered": false,
+              "IsRunning": false,
+              "LampModel": {
+                "_type": "component",
+                "component_id": "3dbe7d3d-4fcd-4d5b-a55a-e02adb94157c",
+                "go": "5b1f21dc-4359-4fe5-a9fe-8df0e1b9461c",
+                "component_type": "ModelRenderer"
+              },
+              "Light": {
+                "_type": "component",
+                "component_id": "b4fa0e7c-ea3e-4fb8-ab0e-39fd804fc2d2",
+                "go": "e86f3f27-9140-4c09-a296-c87b30e451f7",
+                "component_type": "PointLight"
+              },
+              "Name": "Lamp",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "PowerConsumption": 12
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "e86f3f27-9140-4c09-a296-c87b30e451f7",
+              "__version": 1,
+              "Flags": 0,
+              "Name": "Point Light",
+              "Position": "0,0,72.07487",
+              "Rotation": "0,0,0,1",
+              "Scale": "1,1,1",
+              "Tags": "light_point,light",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "NetworkInterpolation": true,
+              "NetworkOrphaned": 0,
+              "OwnerTransfer": 1,
+              "Components": [
+                {
+                  "__type": "Sandbox.PointLight",
+                  "__guid": "b4fa0e7c-ea3e-4fb8-ab0e-39fd804fc2d2",
+                  "__enabled": false,
+                  "Attenuation": 0.7,
+                  "FogMode": "Enabled",
+                  "FogStrength": 1,
+                  "LightColor": "1,1,1,1",
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "Radius": 250,
+                  "Shadows": false
+                }
+              ],
+              "Children": []
+            },
+            {
+              "__guid": "7d9eccab-9861-454e-b850-4e2b659cdfc2",
+              "__version": 1,
+              "Flags": 0,
+              "Name": "Cable Attatch Point",
+              "Position": "-17.5813,0,0",
+              "Rotation": "0,0,0,1",
+              "Scale": "1,1,1",
+              "Tags": "",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "NetworkInterpolation": true,
+              "NetworkOrphaned": 0,
+              "OwnerTransfer": 1,
+              "Components": [
+                {
+                  "__type": "Sandbox.LineRenderer",
+                  "__guid": "da53a0ff-333a-469c-9028-91af310bc54c",
+                  "__enabled": true,
+                  "Additive": false,
+                  "CastShadows": true,
+                  "Color": {
+                    "blend": "Linear",
+                    "color": [],
+                    "alpha": []
+                  },
+                  "DepthFeather": 0,
+                  "EndCap": "None",
+                  "Face": "Camera",
+                  "FogStrength": 1,
+                  "Lighting": false,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "Opaque": true,
+                  "Points": [
+                    {
+                      "_type": "gameobject",
+                      "go": "7d9eccab-9861-454e-b850-4e2b659cdfc2"
+                    },
+                    {
+                      "_type": "gameobject",
+                      "go": "5a45b621-a56d-484d-a9d6-bcfe6fb9f64e"
+                    }
+                  ],
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
+                  "SplineBias": 0,
+                  "SplineContinuity": 0,
+                  "SplineInterpolation": 0,
+                  "SplineTension": 0,
+                  "StartCap": "None",
+                  "Texturing": {
+                    "Texture": null,
+                    "WorldSpace": true,
+                    "UnitsPerTexture": 10,
+                    "Scale": 1,
+                    "Offset": 0,
+                    "Scroll": 0
+                  },
+                  "UseVectorPoints": false,
+                  "VectorPoints": [],
+                  "Width": {
+                    "rangey": "0,0.03",
+                    "frames": [
+                      {
+                        "x": 0.5,
+                        "y": 5,
+                        "in": 0,
+                        "out": 0,
+                        "mode": "Mirrored"
+                      }
+                    ]
+                  },
+                  "Wireframe": false
+                }
+              ],
+              "Children": []
+            },
+            {
+              "__guid": "1079ac77-a2c0-4ebc-8ac0-98b86a3ed482",
+              "__version": 1,
+              "Flags": 0,
+              "Name": "Device Display",
+              "Position": "0,0,105",
+              "Rotation": "0,0,1,-0.00000004371139",
+              "Scale": "1.126578,1.126578,1.126578",
+              "Tags": "",
+              "Enabled": true,
+              "NetworkMode": 2,
+              "NetworkInterpolation": true,
+              "NetworkOrphaned": 0,
+              "OwnerTransfer": 1,
+              "Components": [
+                {
+                  "__type": "Sandbox.WorldPanel",
+                  "__guid": "26694669-072c-4e44-9861-203959ba441b",
+                  "__enabled": true,
+                  "HorizontalAlign": "Center",
+                  "InteractionRange": 0,
+                  "LookAtCamera": false,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "PanelSize": "1500,700",
+                  "RenderOptions": {
+                    "GameLayer": true,
+                    "OverlayLayer": false,
+                    "BloomLayer": false,
+                    "AfterUILayer": false
+                  },
+                  "RenderScale": 1,
+                  "VerticalAlign": "Center"
+                },
+                {
+                  "__type": "Harmonie.UI.DeviceInfoUI",
+                  "__guid": "2726bd83-04d6-4e47-8276-5d58c7d878bc",
+                  "__enabled": true,
+                  "connected_device": {
+                    "_type": "component",
+                    "component_id": "26c0633b-ec1b-487e-898b-78692b149857",
+                    "go": "5b1f21dc-4359-4fe5-a9fe-8df0e1b9461c",
+                    "component_type": "CustomLamp"
+                  },
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null
+                },
+                {
+                  "__type": "Harmonie.UI.WorldPanelLookAtPlayer",
+                  "__guid": "6b298e57-e8f7-43ba-a9d5-6e1f92417c0f",
+                  "__enabled": true,
+                  "_maxRotationX": 45,
+                  "_minRotationX": -45,
+                  "OnComponentDestroy": null,
+                  "OnComponentDisabled": null,
+                  "OnComponentEnabled": null,
+                  "OnComponentFixedUpdate": null,
+                  "OnComponentStart": null,
+                  "OnComponentUpdate": null,
+                  "PanelObject": {
+                    "_type": "gameobject",
+                    "go": "1079ac77-a2c0-4ebc-8ac0-98b86a3ed482"
+                  }
+                }
+              ],
+              "Children": []
+            }
+          ]
+        },
+        {
+          "__guid": "5a45b621-a56d-484d-a9d6-bcfe6fb9f64e",
+          "__version": 1,
+          "Flags": 0,
+          "Name": "Lamp plug",
+          "Position": "-51.63818,-38.651,22.57098",
+          "Rotation": "0,0,0,1",
+          "Scale": "0.1126578,0.0563289,0.1126578",
+          "Tags": "unplugged-plug,solid,highlightable",
+          "Enabled": true,
+          "NetworkMode": 2,
+          "NetworkInterpolation": true,
+          "NetworkOrphaned": 0,
+          "OwnerTransfer": 1,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "60d9ff09-0263-4704-8580-562cacfb5c60",
+              "__enabled": true,
+              "BodyGroups": 18446744073709551615,
+              "CreateAttachments": false,
+              "MaterialGroup": null,
+              "MaterialOverride": null,
+              "Model": "models/dev/box.vmdl",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
+              "RenderType": "On",
+              "Tint": "1,1,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "931c54ad-7922-43d6-b10f-c3b537df5477",
+              "__enabled": true,
+              "Center": "0,0,0",
+              "Friction": null,
+              "IsTrigger": false,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OnObjectTriggerEnter": null,
+              "OnObjectTriggerExit": null,
+              "OnTriggerEnter": null,
+              "OnTriggerExit": null,
+              "Scale": "50,50,50",
+              "Static": false,
+              "Surface": null,
+              "SurfaceVelocity": "0,0,0"
+            },
+            {
+              "__type": "Sandbox.Rigidbody",
+              "__guid": "07c65729-3397-46c6-81fb-527945654a61",
+              "__enabled": true,
+              "AngularDamping": 0,
+              "Gravity": true,
+              "LinearDamping": 0,
+              "Locking": {
+                "X": false,
+                "Y": false,
+                "Z": false,
+                "Pitch": false,
+                "Yaw": false,
+                "Roll": false
+              },
+              "MassCenterOverride": "0,0,0",
+              "MassOverride": 0,
+              "MotionEnabled": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "OverrideMassCenter": false,
+              "RigidbodyFlags": 0,
+              "StartAsleep": false
+            },
+            {
+              "__type": "Sandbox.HighlightOutline",
+              "__guid": "b434c83f-075a-4c39-aaec-eca94ddd3bb0",
+              "__enabled": true,
+              "Color": "1,1,1,1",
+              "InsideColor": "0,0,0,0",
+              "InsideObscuredColor": "0,0,0,0",
+              "Material": null,
+              "ObscuredColor": "0,0,0,0.4",
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null,
+              "Width": 0
+            },
+            {
+              "__type": "Harmonie.PowerSpace.Plug",
+              "__guid": "2e6b7c1a-f885-4897-9238-fe46cd7bd780",
+              "__enabled": true,
+              "ConnectedBattery": null,
+              "ConnectedDevice": {
+                "_type": "component",
+                "component_id": "26c0633b-ec1b-487e-898b-78692b149857",
+                "go": "5b1f21dc-4359-4fe5-a9fe-8df0e1b9461c",
+                "component_type": "CustomLamp"
+              },
+              "IsInput": true,
+              "OnComponentDestroy": null,
+              "OnComponentDisabled": null,
+              "OnComponentEnabled": null,
+              "OnComponentFixedUpdate": null,
+              "OnComponentStart": null,
+              "OnComponentUpdate": null
+            }
+          ],
+          "Children": []
+        }
+      ]
+    },
+    {
+      "__guid": "8b115277-b026-4855-8ca4-edb64a44b2f5",
+      "__version": 1,
+      "Flags": 0,
+      "Name": "Map",
+      "Position": "0,0,0",
+      "Rotation": "0,0,0,1",
+      "Scale": "1,1,1",
+      "Tags": "",
+      "Enabled": true,
+      "NetworkMode": 2,
+      "NetworkInterpolation": true,
+      "NetworkOrphaned": 0,
+      "OwnerTransfer": 1,
+      "Components": [
+        {
+          "__type": "Sandbox.MapInstance",
+          "__guid": "0e28d48c-de2f-4f5f-914b-d33ebf114ac2",
+          "__enabled": true,
+          "__version": 1,
+          "EnableCollision": true,
+          "MapName": "mingoelgato.stage_big",
+          "NoOrigin": false,
+          "OnComponentDestroy": null,
+          "OnComponentDisabled": null,
+          "OnComponentEnabled": null,
+          "OnComponentFixedUpdate": null,
+          "OnComponentStart": null,
+          "OnComponentUpdate": null,
+          "OnMapLoaded": null,
+          "OnMapUnloaded": null,
+          "UseMapFromLaunch": false
+        }
+      ],
+      "Children": []
+    }
+  ],
+  "SceneProperties": {
+    "NetworkInterpolation": true,
+    "TimeScale": 1,
+    "WantsSystemScene": true,
+    "Metadata": {
+      "Title": "minimal"
+    },
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "ResourceVersion": 3,
+  "Title": "minimal",
+  "Description": null,
+  "__references": [
+    "exorealms.76fccc8db731288a#41169",
+    "igrotronika.click1#51268",
+    "luke.fwlamp#22889",
+    "shibabox.power_socket_reupload#33231",
+    "titanovsky.mdl_pgen#10740"
+  ],
+  "__version": 3
+}

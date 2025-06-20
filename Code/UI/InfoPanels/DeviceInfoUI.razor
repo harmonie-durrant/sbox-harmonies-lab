@@ -1,0 +1,21 @@
+@namespace Harmonie.UI
+@using Sandbox;
+@using Sandbox.UI;
+@using Harmonie.PowerSpace;
+@inherits PanelComponent
+
+<root class="DeviceInfoUI">
+	<div class="title">@connected_device.Name</div>
+	<div class="info">@(connected_device.PowerConsumption >= 0 ? "Consumation" : "Generation"): @MathF.Abs(connected_device.PowerConsumption) W</div>
+	<div class="info @(connected_device.IsActive ? "good" : "critical")">Status: @(connected_device.IsActive ? "On" : "Off")</div>
+	<div class="info @(connected_device.IsPowered ? "good" : "critical")">IsPowered: @(connected_device.IsPowered ? "True" : "False")</div>
+</root>
+
+@code {
+	[Property] public DeviceBase connected_device { get; set; }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( connected_device.Name, connected_device.PowerConsumption, connected_device.IsActive, connected_device.IsPowered );
+}

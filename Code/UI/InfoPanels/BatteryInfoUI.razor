@@ -1,0 +1,21 @@
+@namespace Harmonie.UI
+@using Sandbox;
+@using Sandbox.UI;
+@using Harmonie.PowerSpace;
+@inherits PanelComponent
+
+<root class="BatteryInfoUI">
+	<div class="title">@connected_battery.Name</div>
+	<div class="info">Charge: @(connected_battery.GetChangeToDecimals(2)) Ah</div>
+	<div class="info">Voltage: @connected_battery.Voltage V</div>
+	<div class="info critical">Status: @(connected_battery.ChargeStatus == 1 ? "Charging" : connected_battery.ChargeStatus == -1 ? "Discharging" : "Idle")</div>
+</root>
+
+@code {
+	[Property] public Battery connected_battery { get; set; }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( connected_battery.CurrentCharge, connected_battery.Voltage, connected_battery.ChargeStatus, connected_battery.CurrentCharge );
+}
