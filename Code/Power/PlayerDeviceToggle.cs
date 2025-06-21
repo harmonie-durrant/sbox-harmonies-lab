@@ -6,7 +6,7 @@ public sealed class PlayerDeviceToggle : Component
 {
     [Property] public CameraComponent TargetCamera { get; set; }
 
-    private GameObject GetLookingAtObject(string tag = "interactable")
+    private GameObject GetLookingAtObject( string tag )
     {
         if ( TargetCamera is null ) return null;
 
@@ -27,7 +27,7 @@ public sealed class PlayerDeviceToggle : Component
         if ( Input.Pressed( "Use" ) )
         {
             // Get the object the player is looking at
-            GameObject lookingAtObject = GetLookingAtObject();
+            GameObject lookingAtObject = GetLookingAtObject("interactable");
             if ( lookingAtObject is not null )
             {
                 DeviceBase device = lookingAtObject.GetComponent<DeviceBase>();

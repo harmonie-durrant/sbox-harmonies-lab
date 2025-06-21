@@ -2,7 +2,6 @@ namespace Harmonie.PowerSpace;
 
 public sealed class FemalePlugDetector : Component, Component.ITriggerListener
 {
-	[Property] public BoxCollider DetectionBox { get; set; }
 	[Property] public GameObject TargetSnapObject { get; set; }
 
 	[Property] public DeviceBase ConnectedDevice { get; set; } // The device that this plug is connected to, if any
