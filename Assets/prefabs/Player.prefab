@@ -68,7 +68,7 @@
           "go": "1d2d6fd7-191d-426f-978e-a895fb954fae",
           "component_type": "SkinnedModelRenderer"
         },
-        "RotateWithGround": true,
+        "RotateWithGround": false,
         "RotationAngleLimit": 45,
         "RotationSpeed": 1,
         "RunByDefault": false,

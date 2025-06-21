@@ -50,6 +50,17 @@ public sealed class Battery : Component
 	{
 		return Voltage - (loadCurrent * InternalResistance);
 	}
+	
+	public void RemoveConnection(Plug plug)
+	{
+		if ( plug is null ) return;
+		if ( Connections.Contains( plug ) )
+		{
+			Connections.Remove( plug );
+			plug.ConnectedDevice.IsPowered = false; // Ensure the device is no longer powere by this battery
+			plug.ConnectedBattery = null; // Clear the connected battery reference if not already done
+		}
+	}
 
 	protected override void OnUpdate()
 	{
@@ -61,7 +72,7 @@ public sealed class Battery : Component
 			DeviceBase device = plug.ConnectedDevice;
 
 			float power = device.PowerConsumption; // Watts
-			if (power == 0)
+			if ( power == 0 )
 				continue;
 
 			float dt = Time.Delta;

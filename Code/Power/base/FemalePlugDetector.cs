@@ -27,23 +27,19 @@ public sealed class FemalePlugDetector : Component, Component.ITriggerListener
 	/// </summary>
 	public void DisconnectPlug()
 	{
-		if ( _pluggedObject is null ) return;
-
-		// Unplug the object
-		_pluggedObject.SetParent( null, true );
-		IsPluggedIn = false;
-
+		Log.Info( $"Disconnecting plug: {_pluggedObject?.Name}" );
+		if ( _pluggedObject is null || TargetSnapObject is null ) return; // Prerequisites: must have a plugged object and a target snap object
 		Plug plug = _pluggedObject.GetComponent<Plug>();
 		if ( plug is null ) return;
 
-		// Clear the connected device or battery
+		// Clear the connected device or battery using cache references
 		if ( _connectedDevice is not null )
 		{
 			ConnectedDevice = null; // Clear the connected device
 			_connectedDevice = null; // Clear the connected device Reference
 			plug.ConnectedBattery = null; // Clear the plug's connected battery
 		}
-		ConnectedBattery.Connections.Remove( plug ); // Remove this plug from the battery's connections
+		ConnectedBattery.RemoveConnection( plug ); // Remove this plug from the battery's connections
 		if ( _connectedBattery is not null )
 		{
 			ConnectedBattery = null; // Clear the connected battery
@@ -51,19 +47,26 @@ public sealed class FemalePlugDetector : Component, Component.ITriggerListener
 			plug.ConnectedDevice = null; // Clear the plug's connected device
 		}
 
+		// Detach the object
+		_pluggedObject.SetParent( null, true );
 		// Reset the plug's tags
 		_pluggedObject.Tags.Remove( "plugged-plug" );
 		_pluggedObject.Tags.Add( "unplugged-plug" );
 		_pluggedObject.Tags.Add( "solid" );
+		// Move the plug away to avoid a reattachment loop
+		_pluggedObject.WorldPosition = TargetSnapObject.WorldPosition + Vector3.Forward * 5f; // Move the plug slightly forward to avoid reattachment
 
-		// Re-enable the plug's physics
+		// Re-enable the plug's physics & collider
 		Rigidbody rb = _pluggedObject.GetComponent<Rigidbody>( true );
 		if ( rb is not null )
 			rb.Enabled = true; // Re-enable physics for the plug
-
 		BoxCollider boxCollider = _pluggedObject.GetComponent<BoxCollider>( true );
 		if ( boxCollider is not null )
 			boxCollider.Enabled = true; // Make sure the plug's collider is enabled
+
+		// Clear cache references
+		_connectedBattery = null;
+		_connectedDevice = null;
 
 		_pluggedObject = null; // Clear the plugged object reference
 		IsPluggedIn = false; // Mark as unplugged
@@ -73,6 +76,9 @@ public sealed class FemalePlugDetector : Component, Component.ITriggerListener
 
 	private void ConnectPlug( GameObject go )
 	{
+		_connectedBattery = null;
+		_connectedDevice = null;
+		Log.Info( $"Connecting plug: {go.Name}" );
 		if ( go.Tags.Any( tag => _validTags.Contains( tag ) ) == false ) return; // Verify tags
 
 		// Verify that the object has a Plug component
@@ -109,13 +115,13 @@ public sealed class FemalePlugDetector : Component, Component.ITriggerListener
 		go.SetParent( TargetSnapObject, true );
 
 		// Get the device or battery from the plug
-		if ( plug.ConnectedDevice is not null )
+		if ( plug.ConnectedDevice.IsValid() && ConnectedDevice is null )
 		{
 			ConnectedDevice = plug.ConnectedDevice;
 			_connectedDevice = plug.ConnectedDevice; // Set the connected device reference
 			plug.ConnectedBattery = ConnectedBattery; // Link the plug to the connected battery
 		}
-		if ( plug.ConnectedBattery is not null )
+		if ( plug.ConnectedBattery.IsValid() && ConnectedBattery is null )
 		{
 			ConnectedBattery = plug.ConnectedBattery;
 			_connectedBattery = plug.ConnectedBattery; // Set the connected battery reference
