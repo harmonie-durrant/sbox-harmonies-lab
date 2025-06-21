@@ -22,6 +22,9 @@ public sealed class FemalePlugDetector : Component, Component.ITriggerListener
 
 	private GameObject _pluggedObject = null; // The object that is currently plugged in, if any
 
+	/// <summary>
+	/// Disconnects the plug from the target snap object and clears the connected device or battery.
+	/// </summary>
 	public void DisconnectPlug()
 	{
 		if ( _pluggedObject is null ) return;
@@ -48,9 +51,6 @@ public sealed class FemalePlugDetector : Component, Component.ITriggerListener
 			plug.ConnectedDevice = null; // Clear the plug's connected device
 		}
 
-		// Move plug away from the snap object
-		_pluggedObject.WorldPosition = TargetSnapObject.WorldPosition + TargetSnapObject.WorldRotation.Forward * 10f + TargetSnapObject.WorldRotation.Up * 10f; // Move it slightly away from the snap object
-
 		// Reset the plug's tags
 		_pluggedObject.Tags.Remove( "plugged-plug" );
 		_pluggedObject.Tags.Add( "unplugged-plug" );
@@ -59,15 +59,11 @@ public sealed class FemalePlugDetector : Component, Component.ITriggerListener
 		// Re-enable the plug's physics
 		Rigidbody rb = _pluggedObject.GetComponent<Rigidbody>( true );
 		if ( rb is not null )
-		{
 			rb.Enabled = true; // Re-enable physics for the plug
-		}
 
-		BoxCollider boxCollider = _pluggedObject.GetComponent<BoxCollider>();
+		BoxCollider boxCollider = _pluggedObject.GetComponent<BoxCollider>( true );
 		if ( boxCollider is not null )
-		{
 			boxCollider.Enabled = true; // Make sure the plug's collider is enabled
-		}
 
 		_pluggedObject = null; // Clear the plugged object reference
 		IsPluggedIn = false; // Mark as unplugged
@@ -94,6 +90,7 @@ public sealed class FemalePlugDetector : Component, Component.ITriggerListener
 		// Set tags
 		go.Tags.Remove( "unplugged-plug" );
 		go.Tags.Remove( "solid" );
+		go.Tags.Remove( "grabbed" );
 		go.Tags.Add( "plugged-plug" );
 
 		// Disable the plug's physics while it's plugged in

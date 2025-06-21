@@ -14,11 +14,14 @@ public sealed class PlayerUnPlug : Component
         var rayDirection = TargetCamera.WorldRotation.Forward;
         var trace = Scene.Trace.Ray( rayOrigin, rayOrigin + rayDirection * 1000f )
             .IgnoreGameObject( TargetCamera.GameObject )
+            .UseRenderMeshes()
             .HitTriggersOnly()
             .WithTag(tag)
             .Run();
 
-        return trace.Hit ? trace.GameObject : null;
+        Log.Info($"PlayerUnPlug: Looking at object with tag '{tag}': {trace.Hit} : {trace.Collider?.GameObject?.Name}");
+
+        return trace.Hit ? trace.Collider?.GameObject : null;
     }
 
     protected override void OnFixedUpdate()
