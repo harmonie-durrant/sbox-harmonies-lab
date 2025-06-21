@@ -19,8 +19,6 @@ public sealed class PlayerUnPlug : Component
             .WithTag(tag)
             .Run();
 
-        Log.Info($"PlayerUnPlug: Looking at object with tag '{tag}': {trace.Hit} : {trace.Collider?.GameObject?.Name}");
-
         return trace.Hit ? trace.Collider?.GameObject : null;
     }
 
