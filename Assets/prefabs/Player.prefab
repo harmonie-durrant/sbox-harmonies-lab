@@ -219,6 +219,23 @@
         "OnComponentUpdate": null,
         "PullForce": 20,
         "PushForce": 1000
+      },
+      {
+        "__type": "Harmonie.PlayerSpace.PlayerUnPlug",
+        "__guid": "2ee09278-33f6-4295-9f71-b9967ea1a943",
+        "__enabled": true,
+        "OnComponentDestroy": null,
+        "OnComponentDisabled": null,
+        "OnComponentEnabled": null,
+        "OnComponentFixedUpdate": null,
+        "OnComponentStart": null,
+        "OnComponentUpdate": null,
+        "TargetCamera": {
+          "_type": "component",
+          "component_id": "8933f230-16cf-4dee-862c-9fd16a012410",
+          "go": "8be5076d-d764-4666-9a2e-a9e3c768c0e9",
+          "component_type": "CameraComponent"
+        }
       }
     ],
     "Children": [
