@@ -21,7 +21,7 @@
           "__guid": "dfebee9c-b786-4c1e-950e-49578681edfd",
           "__enabled": true,
           "Author": null,
-          "Changes": null,
+          "Changes": "",
           "Description": "",
           "Group": null,
           "OnComponentDestroy": null,
@@ -93,7 +93,7 @@
           "__enabled": true,
           "__version": 1,
           "EnableCollision": true,
-          "MapName": "harmonie's lab.vmap",
+          "MapName": "harmonie.harmonieslab",
           "NoOrigin": false,
           "OnComponentDestroy": null,
           "OnComponentDisabled": null,
@@ -103,7 +103,7 @@
           "OnComponentUpdate": null,
           "OnMapLoaded": null,
           "OnMapUnloaded": null,
-          "UseMapFromLaunch": false
+          "UseMapFromLaunch": true
         }
       ],
       "Children": []

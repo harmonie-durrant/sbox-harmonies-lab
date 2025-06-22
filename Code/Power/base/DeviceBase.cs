@@ -59,8 +59,11 @@ public abstract class DeviceBase : Component
 
     protected override void OnStart()
     {
-        ActiveSoundPoint.Enabled = IsActive;
-        ActiveSoundPoint.SoundEvent = ActiveSound;
+        if (ActiveSoundPoint is not null)
+        {
+            ActiveSoundPoint.Enabled = IsActive;
+            ActiveSoundPoint.SoundEvent = ActiveSound;
+        }
     }
 
     // Called when a change in the device's state occurs

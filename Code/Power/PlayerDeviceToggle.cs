@@ -14,10 +14,11 @@ public sealed class PlayerDeviceToggle : Component
         var rayDirection = TargetCamera.WorldRotation.Forward;
         var trace = Scene.Trace.Ray( rayOrigin, rayOrigin + rayDirection * 1000f )
             .IgnoreGameObject( TargetCamera.GameObject )
-            .WithTag( tag )
+            .HitTriggers()
+            .WithAnyTags( "interactable", "femaleplug" )
             .Run();
 
-        return trace.Hit ? trace.GameObject : null;
+        return trace.Hit ? trace.Collider.GameObject : null;
     }
 
     protected override void OnFixedUpdate()
