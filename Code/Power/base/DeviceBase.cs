@@ -57,11 +57,17 @@ public abstract class DeviceBase : Component
     [Property] public SoundEvent ActiveSound { get; set; } = null;
 	[Property] public SoundPointComponent ActiveSoundPoint { get; set; } = null;
 
+    protected override void OnStart()
+    {
+        ActiveSoundPoint.Enabled = IsActive;
+        ActiveSoundPoint.SoundEvent = ActiveSound;
+    }
+
     // Called when a change in the device's state occurs
     public virtual void OnPowerChange()
     {
+        ActiveSoundPoint.Enabled = IsActive;
         // This method can be overridden by derived classes to handle power state changes
         // For example, you might want to toggle device state or update UI elements
-        Log.Info( $"Power state changed: {(IsRunning ? "Running" : "Not running")}" );
     }
 }
