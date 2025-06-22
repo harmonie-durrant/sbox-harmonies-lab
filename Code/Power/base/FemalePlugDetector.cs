@@ -1,6 +1,6 @@
 namespace Harmonie.PowerSpace;
 
-public sealed class FemalePlugDetector : Component, Component.ITriggerListener
+public sealed class FemalePlugDetector : Component
 {
 	[Property] public GameObject TargetSnapObject { get; set; }
 
@@ -21,6 +21,15 @@ public sealed class FemalePlugDetector : Component, Component.ITriggerListener
 	};
 
 	private GameObject _pluggedObject = null; // The object that is currently plugged in, if any
+
+	protected override void OnStart()
+	{
+		BoxCollider boxCollider = GameObject.GetComponent<BoxCollider>();
+		if ( boxCollider is not null)
+		{
+			boxCollider.OnTriggerEnter = OnTriggerEnter;
+		}
+	}
 
 	/// <summary>
 	/// Disconnects the plug from the target snap object and clears the connected device or battery.

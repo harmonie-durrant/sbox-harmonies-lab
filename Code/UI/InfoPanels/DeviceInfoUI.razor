@@ -8,7 +8,8 @@
 	<div class="title">@connected_device.Name</div>
 	<div class="info">@(connected_device.PowerConsumption >= 0 ? "Consumation" : "Generation"): @MathF.Abs(connected_device.PowerConsumption) W</div>
 	<div class="info @(connected_device.IsActive ? "good" : "critical")">Status: @(connected_device.IsActive ? "On" : "Off")</div>
-	<div class="info @(connected_device.IsPowered ? "good" : "critical")">IsPowered: @(connected_device.IsPowered ? "True" : "False")</div>
+	<div class="info @(connected_device.PowerIn >= connected_device.PowerConsumption ? "good" : "critical")">Power Recieved: @(connected_device.PowerIn) W</div>
+	<div class="info @(connected_device.IsRunning ? "good" : "critical")">IsRunning: @(connected_device.IsRunning ? "True" : "False")</div>
 </root>
 
 @code {
@@ -17,5 +18,5 @@
 	/// <summary>
 	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
 	/// </summary>
-	protected override int BuildHash() => System.HashCode.Combine( connected_device.Name, connected_device.PowerConsumption, connected_device.IsActive, connected_device.IsPowered );
+	protected override int BuildHash() => System.HashCode.Combine( connected_device.Name, connected_device.PowerConsumption, connected_device.IsActive, connected_device.IsPowered, connected_device.PowerIn );
 }

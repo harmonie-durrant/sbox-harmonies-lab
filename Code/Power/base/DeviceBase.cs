@@ -4,6 +4,20 @@ public abstract class DeviceBase : Component
 {
     [Property] public string Name { get; set; } = "Device";
     [Property] public float PowerConsumption { get; set; } = 10.0f; // in W
+    private float _powerIn = 0.0f;
+    [Property]
+    public float PowerIn
+    {
+        get => _powerIn;
+        set
+        {
+            if ( _powerIn == value )
+                return;
+
+            _powerIn = value;
+            OnPowerChange();
+        }
+    }
 
     // Indicates whether the device is on or off
     private bool _isActive = false;
@@ -18,27 +32,18 @@ public abstract class DeviceBase : Component
 
             _isActive = value;
 
+            if (!_isActive)
+                PowerIn = 0.0f;
+
             if ( ActiveSoundPoint is not null && ActiveSound is not null )
-                ActiveSoundPoint.Enabled = _isActive;
+                    ActiveSoundPoint.Enabled = _isActive;
 
             OnPowerChange();
         }
     }
-
-    // Indicates whether the device is receiving power
-	private bool _isPowered = false;
-    [Property]
     public bool IsPowered
     {
-        get => _isPowered;
-        set
-        {
-            if ( _isPowered == value )
-                return;
-
-            _isPowered = value;
-            OnPowerChange();
-        }
+        get => _powerIn >= PowerConsumption;
     }
 
     // Indicates whether the device is currently running (active and powered)

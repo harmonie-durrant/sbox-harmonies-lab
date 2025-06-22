@@ -4,6 +4,8 @@ public sealed class Battery : Component
 {
 	[Property] public string Name { get; set; } = "Battery";
 
+	[Property] public bool IsInstantRelease { get; set; } = false;
+
 	[Property] public float CurrentCharge { get; set; } = 50.0f; // in Ah
 	[Property] public float MaxCharge { get; set; } = 100.0f; // in Ah
 	[Property] public float Voltage { get; set; } = 12.0f; // in V
@@ -57,13 +59,50 @@ public sealed class Battery : Component
 		if ( Connections.Contains( plug ) )
 		{
 			Connections.Remove( plug );
-			plug.ConnectedDevice.IsPowered = false; // Ensure the device is no longer powere by this battery
+			plug.ConnectedDevice.PowerIn = 0; // Ensure the device is no longer powere by this battery
 			plug.ConnectedBattery = null; // Clear the connected battery reference if not already done
+		}
+	}
+
+	public void DistributeInstantRelease()
+	{
+		if ( !IsInstantRelease ) return;
+		// Get power to distribute
+		float power = 0.0f; // in w
+		foreach ( Plug plug in Connections )
+		{
+			if ( plug is null || plug.ConnectedDevice is null ) continue;
+			DeviceBase device = plug.ConnectedDevice;
+			if ( !device.IsActive )
+				continue;
+			if ( device.PowerConsumption <= 0 )
+				power += -device.PowerConsumption;
+		}
+		foreach ( Plug plug in Connections )
+		{
+			if ( plug is null || plug.ConnectedDevice is null ) continue;
+			DeviceBase device = plug.ConnectedDevice;
+			if ( device.PowerConsumption < 0 )
+				continue;
+			if ( power <= 0.0f )
+			{
+				device.PowerIn = 0; // No power
+				continue;
+			}
+			if ( !device.IsActive )
+				continue;
+			device.PowerIn = MathF.Min( device.PowerConsumption, power );
+			power -= device.PowerConsumption;
 		}
 	}
 
 	protected override void OnUpdate()
 	{
+		if ( IsInstantRelease )
+		{
+			DistributeInstantRelease();
+			return;
+		}
 		float status = 0;
 		// Simulate charging/discharging via plugs
 		foreach ( Plug plug in Connections )
@@ -72,15 +111,18 @@ public sealed class Battery : Component
 			DeviceBase device = plug.ConnectedDevice;
 
 			float power = device.PowerConsumption; // Watts
-			if ( power == 0 )
+			if ( power <= 0 )
+			{
+				device.PowerIn = 0; // No power
 				continue;
+			}
 
 			float dt = Time.Delta;
 			float energy = power * dt / 3600.0f; // Wh to Ah (assuming Voltage is constant)
 			float chargeAmount = energy / Voltage; // Ah
 			if ( !device.IsActive )
 			{
-				device.IsPowered = CurrentCharge > 0;
+				device.PowerIn = (CurrentCharge > 0) ? device.PowerConsumption : 0;
 				continue;
 			}
 			bool powered = false;
@@ -88,7 +130,7 @@ public sealed class Battery : Component
 				powered = Discharge( chargeAmount );
 			else
 				powered = Charge( -chargeAmount );
-			device.IsPowered = powered; // Device is powered
+			device.PowerIn = powered ? device.PowerConsumption : 0;; // Device is powered
 			if ( powered )
 				status += -chargeAmount;
 		}
