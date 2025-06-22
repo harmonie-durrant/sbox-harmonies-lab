@@ -19,6 +19,7 @@ code/Properties/*
 !*.shader_c
 *.los
 *.vpk
+*.meta
 *launchSettings.json
 *.sln
 
@@ -26,6 +27,10 @@ code/Properties/*
 
 # Exported / standalone games
 Exports/
+
+# Map
+*.vmap
+Assets/_bakeresourcecache/
 
 # Notes
 UpdateNotes.md
