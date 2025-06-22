@@ -1,0 +1,52 @@
+Controls
+{
+	position: absolute;
+	bottom: 0px;
+	padding: 15px;
+	width: 100vw;
+
+	.glyphs-container
+	{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	.glyphs-left
+	{
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 15px;
+	}
+
+	.glyph
+	{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(0, 0, 0, 0.25);
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	.control-glyph
+	{
+		width: 50px;
+		height: 50px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.control-glyph-label
+	{
+		color: white;
+		font-weight: bold;
+		font-size: 30px
+	}
+}

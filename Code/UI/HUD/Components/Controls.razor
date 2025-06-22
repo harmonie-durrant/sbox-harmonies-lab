@@ -1,0 +1,30 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits Panel
+@namespace Sandbox
+
+<root>
+    <div class="glyphs-container">
+		<div class="glyphs-left">
+			<div class="glyph">
+				<Image class="control-glyph" Texture=@PickUpIcon/>
+				<span class="control-glyph-label">Pick Up / Drop</span>
+			</div>
+			<div class="glyph">
+				<Image class="control-glyph" Texture=@FreezeIcon/>
+				<span class="control-glyph-label">Freeze</span>
+			</div>
+			<div class="glyph">
+				<Image class="control-glyph" Texture=@UseIcon/>
+				<span class="control-glyph-label">Interact</span>
+			</div>
+		</div>
+	</div>
+</root>
+
+@code
+{
+    public Texture PickUpIcon = Input.GetGlyph( "Attack1", InputGlyphSize.Medium, true );
+    public Texture FreezeIcon = Input.GetGlyph( "Attack2", InputGlyphSize.Medium, true );
+    public Texture UseIcon = Input.GetGlyph( "Use", InputGlyphSize.Medium, true );
+}
