@@ -1,0 +1,28 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+@namespace Sandbox
+
+<root>
+	<div class="top-gradient-overlay"></div>
+	<div class="bottom-gradient-overlay"></div>
+	<div class="left-gradient-overlay"></div>
+	<div class="right-gradient-overlay"></div>
+	<div class="title">@Title</div>
+	<div class="subtitle">@SubTitle</div>
+</root>
+
+@code
+{
+
+	[Property] public string Title { get; set; }
+	[Property, TextArea] public string SubTitle { get; set; }
+
+	/// <summary>
+	/// the hash determines if the system should be rebuilt. If it changes, it will be rebuilt
+	/// </summary>
+	protected override int BuildHash() => System.HashCode.Combine( 
+		Title,
+		SubTitle
+	);
+}

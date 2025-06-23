@@ -1,0 +1,85 @@
+@import "hui_variables.scss";
+
+TitleScreen
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	font-family: $hui-font-family;
+	color: $hui-font-color;
+	text-shadow: $hui-text-shaddow;
+	gap: 20px;
+
+	.top-gradient-overlay
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 50%;
+		background: linear-gradient(
+			to bottom,
+			rgba(255,0,0,0.25) 0%,	
+			rgba(255,0,0,0) 100%
+		);
+	}
+
+	.bottom-gradient-overlay
+	{
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(
+			to top,
+			rgba(255,0,0,0.25) 0%,
+			rgba(255,0,0,0) 100%
+		);
+	}
+
+	.left-gradient-overlay
+	{
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 50%;
+		bottom: 0;
+		background: linear-gradient(
+			to right,
+			rgba(255,0,0,0.25) 0%,
+			rgba(255,0,0,0) 100%
+		);
+	}
+
+	.right-gradient-overlay
+	{
+		position: absolute;
+		top: 0;
+		left: 50%;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(
+			to left,
+			rgba(255,0,0,0.25) 0%,
+			rgba(255,0,0,0) 100%
+		);
+	}
+
+	.title
+	{
+		font-size: $hui-title-size;
+		font-weight: $hui-title-weight;
+	}
+
+	.subtitle
+	{
+		font-size: $hui-subtitle-size;
+		font-weight: $hui-subtitle-weight;
+	}
+}
