@@ -1,6 +1,6 @@
 # Harmonie's Lab
 
-![Harmonie's Lab Logo]([path/to/logo.png](https://cdn.sbox.game/upload/b/591232fa/778e/4694/9200/5a03ef0d58fa.png))
+![Harmonie's Lab Logo](https://cdn.sbox.game/upload/b/591232fa/778e/4694/9200/5a03ef0d58fa.png)
 
 Welcome to **Harmonie's Lab**!  
 This project is a collection of open source mechanics and systems for [S&Box](https://sbox.game), designed to help developers learn, experiment, and build their own games.
